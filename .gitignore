@@ -1,0 +1,4 @@
+GradleExample1/build/**
+GradleExample1/gradle/**
+GradleExample1/.gradle/**
+.gradle/**
