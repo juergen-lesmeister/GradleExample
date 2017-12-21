@@ -1,0 +1,26 @@
+repositories {
+	mavenCentral()
+}
+
+apply plugin: "java"
+
+//configurations {
+//	myConfig
+//}
+
+dependencies {
+	compile "org.apache.commons:commons-lang3:3.3.2"
+//	compile group: "org.apache.commons", name: "commons-lang3", version: "3.3.2"
+//	myConfig "org.apache.commons:commons-lang3:3.3.2" 
+}
+
+sourceSets {
+	main.java.srcDir "src/main"
+	test.java.srcDir "src/test"
+}
+
+jar {
+	from configurations.compile.collect { zipTree it }
+//	from configurations.myConfig.collect { zipTree it }
+	manifest.attributes "Main-Class": "com.jel.GradleExample.Main"
+}
